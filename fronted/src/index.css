@@ -1,0 +1,184 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Colors */
+:root {
+    --primary: #66fcf1;       /* neon cyan */
+    --primary-gradient: linear-gradient(135deg, #66fcf1, #45a29e);
+    --secondary: #ffffff;
+    --card-bg: rgba(255,255,255,0.05);
+    --text-light: #d0e6f7;
+    --accent: #45a29e;
+    --error: #ff3e3e;
+}
+
+/* Body Background */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--secondary);
+    background: linear-gradient(135deg, #0f1f3d, #1b2a54, #12213a); /* blue gradient like Solo Leveling */
+    position: relative;
+}
+
+/* Page container */
+.pages {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Header */
+header {
+    background: rgba(255,255,255,0.05);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+header .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Home Layout */
+.home {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+@media (max-width: 900px) {
+    .home {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Workout Cards */
+.workout-details {
+    background: var(--card-bg);
+    border: 1px solid rgba(102,252,241,0.2);
+    border-radius: 0; /* sharp corners like Solo Leveling */
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(102,252,241,0.15);
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.workout-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px var(--primary);
+}
+.workout-details h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.6em;
+    color: var(--primary);
+    font-weight: 700;
+    text-shadow: 0 0 10px var(--primary);
+    text-align: center;
+}
+.workout-details p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: var(--text-light);
+}
+
+/* Delete icon */
+.workout-details span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 0; /* sharp corners */
+    color: var(--primary);
+    font-weight: 600;
+    box-shadow: 0 0 6px var(--primary);
+    transition: all 0.3s;
+}
+.workout-details span:hover {
+    background: var(--primary);
+    color: #12213a;
+    box-shadow: 0 0 20px var(--primary);
+}
+
+/* Workout Form */
+form.create {
+    background: var(--card-bg);
+    border: 1px solid rgba(102,252,241,0.2);
+    padding: 25px;
+    border-radius: 0; /* sharp corners */
+    box-shadow: 0 0 20px rgba(102,252,241,0.15);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+form.create h3 {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8em;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+form.create label {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 0.95em;
+    color: var(--text-light);
+    text-align: left;
+}
+form.create input {
+    padding: 14px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid rgba(102,252,241,0.3);
+    border-radius: 0; /* sharp corners */
+    background: rgba(255,255,255,0.05);
+    color: var(--secondary);
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+form.create input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+form.create button {
+    background: var(--primary-gradient);
+    border: none;
+    color: #12213a;
+    padding: 14px;
+    font-family: "Poppins";
+    font-weight: 700;
+    border-radius: 0; /* sharp corners */
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 0 10px var(--primary);
+}
+form.create button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--primary);
+}
+
+/* Error Messages */
+div.error {
+    padding: 12px;
+    background: rgba(255,62,62,0.2);
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 0; /* sharp corners */
+    margin: 15px 0;
+    font-weight: 500;
+}
+input.error {
+    border: 1px solid var(--error);
+}
